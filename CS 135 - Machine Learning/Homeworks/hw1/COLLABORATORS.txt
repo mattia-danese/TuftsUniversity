@@ -1,0 +1,6 @@
+
+Name: Mattia Danese
+I spent 5 hours on this problem (2 on Prob. 1 and 3 on Prob. 2)
+I sought help from Martino Busollini.
+We talked about the sorting function and the returned 3D array.
+

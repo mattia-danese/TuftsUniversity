@@ -1,0 +1,6 @@
+
+Name: Mattia Danese
+I spent 5 hours on this problem (10 min on Prob. 1 and Prob. 2, 1 on Prob. 3, 2 on Prob. 4, 2 on Prob. 5, and 1 on Prob. 6)
+I sought help from classmate Martino Busollini.
+We talked about the how to plot graphs and figure out the best C threshold.
+
