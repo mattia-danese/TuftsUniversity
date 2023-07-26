@@ -1,0 +1,47 @@
+ES 4 weekly quiz 9
+Read Harris & Harris, section 3.5
+Due via provide, 4/9 at 11:59pm
+  `provide es4 q9 quiz_09.txt`
+Please don't delete any of the existing text; you'll make the grader fail.
+For multiple choice, just put an 'x' or some other character in the brackets
+
+
+1)  Equation 3.14 calculates
+(select one)
+[ ] The clock period as a function of the flip-flip and combinational logic delays
+[X] The combinational logic delay as a function of flip-flop delays and clock period
+[ ] The sequencing overhead as a function of combinational logic delay and clock period
+[ ] The maximum clock frequency as a function of the sequencing overhead
+
+
+2)  Hold time constraints are...
+(select one)
+[ ] Relatively unimportant, and the remainder of the book does not cover them
+[ ] Somewhat important, because they force you to run a circuit more slowly
+[X] Critically important, because they can only be fixed by changing the circuit
+[ ] Hyper-important, and the primary timing issue we'll deal with going forward
+
+
+3)  A synchronizer is necessary when:
+(select one)
+[ ] A sequential circuit accepts and input from the outside world
+[ ] Two outputs must be synchronized (e.g., clock and data)
+[ ] Clock skew becomes too large
+[X] All of the above
+
+
+4)  The book discusses two types of parallelism.  Briefly describe the difference between them.
+(free response)
+
+    One form of parallelism is spatial parallelism.
+    Spatial parallelism deals with multiple copies of the same hardware doing the same task at
+    the same time.
+
+    The other form of parallelism is temporal parallelism.
+    Temporal parallelism deals with a task being broken down into smaller tasks, called stages,
+    where a different instance of a task will be at each stage at any moment.
+
+5)  What questions do you have about this material?
+(free response)
+
+I have no questions on this material.

@@ -1,0 +1,65 @@
+ES 4 weekly quiz 4
+Read Harris & Harris, section 4.1-4.2, 4.7.2
+Due via provide, 2/26 at 11:59pm
+  `provide es4 q4 quiz_04.txt`
+Please don't delete any of the existing text; you'll make the grader fail.
+For multiple choice, just put an 'x' or some other character in the brackets
+
+
+1)  The book describes which version of VHDL?
+(select one)
+[ ] VHDL-1987
+[ ] VHDL-1993
+[X] VHDL-2008
+[ ] VHDL-2019
+
+
+2)  The operator to perform XOR in VHDL is:
+(select one)
+[ ] "@"
+[ ] "&"
+[X] "xor"
+[ ] "x"
+[ ] "^"
+
+
+3)  Which of the following are valid VHDL comments?
+(select all that apply)
+[ ] // Single line comment
+[X] -- Single line comment
+[ ] %% Single line comment
+[ ] # Single line comment
+[ ] % Single line comment
+[X] /* Multi-line
+       comment */
+
+
+4)  The highest precedence VHDL operator is (see table 4.8):
+(select one)
+[X] not
+[ ] *
+[ ] =
+[ ] /=
+[ ] lol
+
+
+5)  T/F: VHDL is case sensitive (i.e., `y` and `Y` refer to different things)
+(select one)
+[ ] True
+[X] False
+
+
+6)  Which of the following specifies an 8-bit constant in VHDL?
+(select all that apply)
+[X] 8B"11"
+[ ] B"11"
+[X] B"11001100"
+[ ] "80"
+[ ] X"11"
+[X] 8X"AB"
+
+
+7)  What questions do you have about this material?
+(free response)
+
+I do not have any questions.

@@ -1,0 +1,72 @@
+ES 4 weekly quiz 11
+Read Harris & Harris, sections 6.1-6.3.5, 6.4 (the remainder of 6.3 is informative
+  especially from a CS perspective but not required)
+Due via provide, 4/23 at 11:59pm
+  `provide es4 q11 quiz_11.txt`
+Please don't delete any of the existing text; you'll make the grader fail.
+For multiple choice, just put an 'x' or some other character in the brackets
+
+
+1)  The ARM architecture described in the book defines how many registers?
+(select one)
+[ ] 2
+[ ] 8
+[X] 16
+[ ] 32
+[ ] 64
+
+
+2)  The STR operation does what?
+(select one)
+[ ] Creates an empty string
+[X] Stores a register to a memory location
+[ ] Enables ARM's "strict address mode"
+[ ] Stirs all the registers around in a kind of stew
+
+
+3)  Which of the following operations execute conditially?
+(select all that apply)
+[ ] ADD
+[X] BEQ
+[ ] BLE
+[ ] CMP
+[X] MOVGE
+
+
+4)  Branches can be used to implement
+(select all that apply)
+[X] if-statements
+[X] if/else-if/else statements (elif, elsif, else if, depending on the language)
+[X] case statements
+[X] for loops
+[X] while loops
+
+
+5)  In ARM assembly, data-processing immediates are stored in:
+(select one)
+[ ] 32 bits appended to the (32-bit) instruction
+[X] The least significant 8 bits of the instruction, as a binary number
+[ ] The least significant 12 bits of the instruction, as a binary number and a shift
+[ ] A register
+
+
+6)  The destination register for data-processing instructions is specified by:
+(select one)
+[ ] bits 31:28
+[ ] bits 19:16
+[X] bits 15:12
+[ ] bits 3:0
+
+
+7)  When the processor takes a branch, it jumps to a new address.  How is this address (known as the branch target address, or BTA) stored?
+(select one)
+[ ] As a 24-bit absolute address
+[ ] As a 20-bit address and a 4-bit shift (allowing values up to 32 bits total)
+[ ] As a 24-bit address difference between the BTA and the PC+8
+[X] As a 24-bit count of the number of instructions between the BTA and the PC+8
+
+
+8)  What questions do you have about this material?
+(free response)
+
+I do not have any questions on this material.

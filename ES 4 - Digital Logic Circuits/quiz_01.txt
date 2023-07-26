@@ -1,0 +1,59 @@
+ES 4 weekly quiz 1
+Read Harris & Harris, sections 1.5, 2.1-2.2
+Due via provide, 2/5 at 11:59pm
+  `provide es4 q1 quiz_01.txt`
+Please don't delete any of the existing text; you'll make the grader fail.
+For multiple choice, just put an 'x' or some other character in the brackets
+
+
+1)   What good is a buffer, since it performs no logical function?
+(select one)
+[ ] It prevents inputs from changing too quickly
+[X] It might be able to deliver large amounts of current
+[ ] It can be used in combination with other gates to minimize the overall logic
+[ ] It has no practical use; it's just a notational convenience
+
+
+
+
+2)   What logic operation is represented by the following truth table?
+ A  B | X
+----------
+ 0  0 | 0
+ 0  1 | 1
+ 1  0 | 1
+ 1  1 | 0
+
+(select one)
+[ ] AND
+[ ] NAND
+[ ] OR
+[ ] NOR
+[X] XOR
+[ ] XNOR
+
+
+
+3)   Which of the circuits in Figure 2.7 are combinational?
+(select all that apply)
+[X] A
+[ ] B
+[X] C
+[ ] D
+[X] E
+
+
+
+4)   A minterm is:
+(select one)
+[ ] A sum involving all of the inputs to a function
+[X] A product involving all of the inputs to a function
+[ ] A minimal representation of the function
+[ ] One term of the minimal representation of the function
+
+
+
+5)   What questions do you have about this material?
+(free response)
+
+As of now I have no questions about this material

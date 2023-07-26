@@ -1,0 +1,75 @@
+ES 4 weekly quiz 3
+Read Harris & Harris, section 2.8-2.9
+Due via provide, 2/19 at 11:59pm
+  `provide es4 q4 quiz_03.txt`
+Please don't delete any of the existing text; you'll make the grader fail.
+For multiple choice, just put an 'x' or some other character in the brackets
+
+
+
+1)  A multiplexer is sometimes also called a:
+(select one)
+[ ] priority encoder
+[X] mux
+[ ] MXOR
+[ ] tristate buffer
+
+
+2)  How many select lines would be needed for a 16:1 multplexer?
+(integer)
+4
+
+3)  A multiplexer can be used to compute arbitrary logic functions by:
+(select one)
+[ ] applying inputs which access the AND and OR gates inside the multiplexer
+[X] wiring the inputs to 0 or 1 based on the truth table
+[ ] driving the inputs with a decoder
+[ ] using an AND gate on the output to combine the maxterms
+
+
+
+4)  A decoder can be combined with what to compute arbitrary logic functions?
+(select one)
+[ ] AND gate
+[X] OR gate
+[ ] Multiplexer
+[ ] Another decoder
+
+
+5)  Contamination delay is 
+(select all that apply)
+[X] Always less than the propagation delay
+[ ] Always greater than or equal to the propagation delay
+[X] The maximum duration of time that the output is an unsteady state
+[ ] The minimum time from an input change to an output change
+
+
+6)  Propagation and contamination delays may vary based on:
+(select all that apply)
+[X] The temperature of the chip(s)
+[X] The length and path of wires inside the chip
+[X] The speed of indivdual gates
+[ ] The day of the week
+
+
+7)  Which of the three multiplexer implementations has the lowest data-to-output propagation delay?
+(select one)
+[ ] Two-level logic (AND/OR)
+[X] Tristate
+[ ] Hierarchical
+
+
+8)  What does the book say is the point of understanding glitches?
+(select one)
+[ ] Only some components can handle glitches; it's important to know what you're working with
+[ ] So they can be recognized and eliminated
+[X] So you know what you're looking at on the oscillsope or simulation waveform
+[ ] There isn't a point; it's just an excuse to talk about circuit delays
+
+
+
+9)  What questions do you have about this material?
+(free response)
+I have no questions.
+
+

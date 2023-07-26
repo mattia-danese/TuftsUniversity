@@ -1,0 +1,40 @@
+ES 4 weekly quiz 10
+Read Harris & Harris, section 5.5
+Due via provide, 4/16 at 11:59pm
+  `provide es4 q10 quiz_10.txt`
+Please don't delete any of the existing text; you'll make the grader fail.
+For multiple choice, just put an 'x' or some other character in the brackets
+
+
+1)  How many bits are in a memory array with 10 address lines and 16-bit words?
+(integer)
+160
+
+2)  A bitline connects to:
+(select one)
+[ ] A single bit
+[ ] All of the bits in a word
+[X] A specific bit position for all words
+[ ] All of the individual bits in a memory
+
+
+3)  SRAM is called "static RAM" because
+(select one)
+[ ] It uses static electricity
+[ ] It retains its value when power is turned off
+[X] Stored values do not need to be refreshed
+[ ] The values remain fixed (static) once programmed
+
+
+4)  In the book's example, a ROM is specified using which VHDL construct?
+(select one)
+[X] A case statement
+[ ] A special component which refers to the FPGA's built-in memory
+[ ] An std_logic_vector
+[ ] An array of std_logic_vector
+
+
+5)  What questions do you have about this material?
+(free response)
+
+I do not have any questions about this material.

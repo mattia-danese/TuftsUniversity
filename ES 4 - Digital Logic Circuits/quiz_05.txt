@@ -1,0 +1,79 @@
+ES 4 weekly quiz 5
+Read Harris & Harris, sections 1.4, 4.3, 4.9
+Due via provide, 3/5 at 11:59pm
+  `provide es4 q5 quiz_05.txt`
+Please don't delete any of the existing text; you'll make the grader fail.
+For multiple choice, just put an 'x' or some other character in the brackets
+
+
+
+1)  How many bits are in a word?
+(select one)
+[ ] 8
+[ ] 16
+[ ] 32
+[ ] 64
+[X] It depends on the processor.
+
+
+2)  Write 0x32 (hexadecimal 32) in decimal:
+(integer)
+50
+
+
+3)  Which of the following are shortcomings of sign-magnitude representation, as compared to 2's complement?
+(select all that apply)
+[ ] Negating a number requires changing many bits
+[X] Zero has more than one representation
+[X] Addition doesn't work the same way as unsigned addition
+[ ] It is not straightforward to determine whether a value is negative
+[ ] Only half as many numbers can be represented
+
+
+4)  What is the smallest (most negative) value that can be represented with an 8-bit two's complement number?
+(integer)
+-128
+
+5)  Structural modeling is a way of describing:
+(select one)
+[ ] the structure of a module, obviously
+[X] how a module is composed of smaller modules
+[ ] how a module's outputs are controlled by its inputs
+[ ] the intermediate signals in a module
+[ ] how a module should be replicated
+
+
+6)  What is wrong with this instantiation of `tristate`? (See Example 4.15)
+
+  mytristate : tristate
+    port map(not d0, s, y);
+
+(select all that apply)
+[ ] A semicolon is missing
+[ ] The name `mytristate` is invalid
+[X] "not d0" cannot be used here
+[ ] The types of the variables do not match the ports
+
+
+7)  The set of inputs and corresponding desired output patterns are known as
+(select one)
+[ ] test cases
+[ ] use cases
+[X] test vectors
+[ ] truth tables
+[ ] overhead
+
+
+8)  The textbook observes that writing testbenches can be very tedious.  What do the authors say is a better way?
+(select one)
+[X] Using a testbench that reads from a file
+[ ] Formal verification
+[ ] Avoiding writing complex modules
+[ ] There isn't a better way, just deal with it
+
+
+
+9)  What questions do you have about this material?
+(free response)
+
+I have no questions about this material.

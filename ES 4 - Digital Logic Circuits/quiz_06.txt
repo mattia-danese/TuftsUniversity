@@ -1,0 +1,78 @@
+ES 4 weekly quiz 6
+Read Harris & Harris, section 5.1-5.2 (5.3 is optional but interesting), 3.1-3.3
+Due via provide, 3/12 at 11:59pm
+  `provide es4 q6 quiz_06.txt`
+Please don't delete any of the existing text; you'll make the grader fail.
+For multiple choice, just put an 'x' or some other character in the brackets
+
+
+1)  The addition circuit you built in lab 2 is a:
+(select one)
+[X] Full adder
+[ ] Ripple-carry adder
+[ ] Carry-lookahead adder
+[ ] Prefix adder
+[ ] Something else
+
+
+2)  What hardware is necessary to perform subtraction?
+(select one)
+[ ] Just an adder
+[X] An adder plus a bank of inverters
+[ ] An adder, a bank of inverters, and a second simplified adder that just adds 1
+[ ] A completely separate piece of hardware, since it needs to borrow instead of carry
+
+
+3)  Comparing the magnitude of numbers is usually done by:
+(select one)
+[ ] A minimized logical function of the input bits, as in lab 1
+[ ] Examining the most significant bits of each number
+[X] Subtracting one from the other and looking at the sign
+[ ] AND-ing the result of XNOR-ing all the corresponding bits of each number
+
+
+4)  In the example ALU design, the ALUControl signals determine:
+(select all that apply)
+[X] Which function is computed
+[ ] Which function is selected as the output
+[X] What output flags to set
+[ ] The order of the operands
+
+
+5)  What happens when the 'S' input of an SR latch goes from 0 to 1?
+(select one)
+[ ] Q gets the value of R
+[X] Q becomes 1, as long as R is 0.
+[ ] Q always gets the value 0
+[ ] Q flips its value from 0 to 1 or 1 to 0
+
+
+6)  A D latch copies D to Q whenever:
+(select one)
+[ ] D changes
+[ ] D has a rising edge
+[ ] The clock has a rising edge
+[X] The clock is high
+
+
+7)  A D flip-flip copies D to Q whenever:
+(select one)
+[ ] D changes
+[X] D has a rising edge
+[ ] The clock has a rising edge
+[ ] The clock is high
+
+
+8)  Which of the following are required for a circuit to be a synchronous sequential circuit?
+(select all that apply)
+[X] At least one circuit element is a register
+[ ] There are no feedback paths (cycles)
+[X] All registers receive the same clock signal
+[ ] Any outputs are connected directly to registers (not the result of combinational logic)
+
+
+
+9)  What questions do you have about this material?
+(free response)
+
+I do not have any questions about this material.

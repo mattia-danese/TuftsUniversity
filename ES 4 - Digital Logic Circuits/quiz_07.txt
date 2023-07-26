@@ -1,0 +1,58 @@
+ES 4 weekly quiz 7
+Read Harris & Harris, section 4.4, 4.5, 5.4
+Due via provide, 3/19 at 11:59pm
+  `provide es4 q7 quiz_07.txt`
+Please don't delete any of the existing text; you'll make the grader fail.
+For multiple choice, just put an 'x' or some other character in the brackets
+
+
+1)  To create a flip-flop which takes the signal `d` as input, the sensitivity list should be:
+(select one)
+[ ] (no sensitivity)
+[ ] (all)
+[ ] (d)
+[ ] (clk, d)
+[X] (clk)
+
+
+2)  T/F: multiple process blocks are necessary if you want to describe multiple flip-flops in a design.
+(select one)
+[ ] True
+[X] False
+
+
+3)  T/F: Every process with a non-empty sensitivity list creates a flip-flop.
+(select one)
+[ ] True
+[X] False
+
+
+4)  To create combinational logic which takes the signal `d` as input, what should the sensitivity list be? (There are two right answers, but the book specifically says one is better, see section 4.5)
+(select one)
+[ ] (no sensitivity)
+[X] (all)
+[ ] (d)
+[ ] (clk, d)
+[ ] (clk)
+
+
+5)  A counter consists of
+(select one)
+[X] A register and an adder
+[ ] A flip-flop and an adder
+[ ] A register and an ALU
+[ ] A flip-flop and an ALU
+
+
+6)  A shift register
+(select all that apply)
+[X] Multiplies and divides by shifting bits left or right
+[X] Is a kind of serial-to-parallel converter
+[ ] Stores the shift amount and controls the behavior of a shifter
+[X] Is a string of flip-flops connected in series
+
+
+7)  What questions do you have about this material?
+(free response)
+
+I have no questions about this material.

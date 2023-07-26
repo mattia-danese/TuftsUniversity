@@ -1,0 +1,81 @@
+ES 4 weekly quiz 2
+Read Harris & Harris, sections 2.3-2.8
+Due via provide, 2/12 at 11:59pm
+  `provide es4 q2 quiz_02.txt`
+Please don't delete any of the existing text; you'll make the grader fail.
+For multiple choice, just put an 'x' or some other character in the brackets
+
+
+
+1)  Which of the following are true, based on the theorems given in the book?
+(select all that apply)
+[X] AND is associative
+[X] OR is associative
+[X] AND distributes over OR
+[X] OR distributes over AND
+
+
+2)  DeMorgan's theorem states that
+(select one)
+[ ] !(A + B) = AB
+[X] !(A + B) = !A!B
+[ ] !(A + B) = !(AB)
+[ ] !(A + B) = !A + !B
+
+
+3)  In a boolean equation, what is a prime implicant?
+(select one)
+[ ] A term which contains each variable exactly once
+[ ] The first term in the equation
+[ ] A term which is a dual of another (indicated with a prime: "'" )
+[X] A term which cannot be combined and simplified with any others
+
+
+4)  Which of the following does the book mention as guidelines for drawing circuits?
+(select all that apply)
+[ ] When a circuit contains both AND and OR gates, the AND gates should be on top
+[X] Straight lines are better than jaggy ones
+[X] Wires always connect at a T junction
+[ ] Never use diagonal lines
+[X] Whenever possible, gates should flow from left to right
+
+
+5)  Bubble pushing primarily uses which theorems?  (Refer back to section 2.3.3)
+(select one)
+[ ] Distributivity and null element
+[X] DeMorgan's and involution
+[ ] Covering and involution
+[ ] Covering and null element
+[ ] DeMorgan's and identity
+
+
+6)  Which of the following are meanings for 'X' in a logic context?
+   Hopefully now you see why we didn't use 'X' to label the output of a circuit!
+(select all that apply)
+[X] A truth table input which doesn't matter ("don't care")
+[X] An illegal value ("contention")
+[X] An uninitialized value in simulation
+[ ] A circuit pin which is disconnected
+[ ] A "high impedance" state
+
+
+7)  What's the point of using a gray code when labeling a Karnaugh map?
+(select one)
+[ ] It requires fewer steps than a binary code
+[X] It makes adjacent cells differ in only one variable
+[ ] It makes your logic more robust (i.e., if your count is off by one, it's ok)
+[ ] Some kittens are gray
+
+
+8)  In a Karnaugh map with 'X's, you should:
+(select one)
+[ ] Not include the 'X's
+[ ] Include all of the 'X's, as if they were '1'
+[X] Include 'X's that simplify the logic, and ignore the rest
+[ ] This is nonsense; a Karnaugh map should never have 'X's
+
+
+9)  What questions do you have about this material?
+(free response)
+
+I don't have any questions.

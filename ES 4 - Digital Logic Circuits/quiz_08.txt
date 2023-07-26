@@ -1,0 +1,53 @@
+ES 4 weekly quiz 8
+Read Harris & Harris, sections 3.4 and 4.6
+Due via provide, 4/2 at 11:59pm
+  `provide es4 q8 quiz_08.txt`
+Please don't delete any of the existing text; you'll make the grader fail.
+For multiple choice, just put an 'x' or some other character in the brackets
+
+
+1)  An FSM consists of:
+(select all that apply)
+[X] Next-state logic
+[ ] Input logic
+[X] Output logic
+[X] A register (bank of flip-flops)
+[ ] A bank of latches
+
+
+2)  Ben's FSM will transition from S1 to S2 when:
+(select one)
+[ ] Ta has a rising edge
+[ ] Either Ta or Tb has a rising edge
+[X] There is a rising clock edge
+[ ] There is a rising clock edge and Ta is high
+
+
+3)  Does the choice of state encodings matter?
+(select one)
+[ ] No, everything works out identically (like variable ordering on a K-map)
+[ ] No, the intermediate steps are different but the function is the same
+[X] Yes, the function is the same but the circuit might use more or fewer gates
+[ ] Yes, changing the state encoding may completely change the circuit function
+
+
+4)  A Moore state machine typically has
+(select one)
+[X] More states than an equivalent Mealy machine
+[ ] Fewer states than an equivalent Mealy machine
+[ ] The same number of states, but more complex combinational logic
+[ ] The same number of states, but simpler combinational logic
+
+
+5)  The book states that a VHDL enumeration data type is used for the states because
+(select all that apply)
+[ ] The state can't be represented with std_logic_vector
+[X] It makes the code more readable
+[X] It makes the code easier to change
+[ ] It uses fewer bits
+
+
+6)  What questions do you have about this material?
+(free response)
+
+I do not have any questions on this material.
