@@ -1,0 +1,4 @@
+macro and
+nand p1,p2,p3  # puts the result of a bitwise NAND on p2 and p3 in p1
+nand p1,p1,p1  # puts the result of a bitwise NAND on p1 and itself in p1
+mend

@@ -1,0 +1,5 @@
+macro neg
+loadval rt,1   # puts 1 in the temporary register
+nand p1,p2,p2  # inverts all the bits of p2 and puts the result in p1
+add p1,p1,rt   # adds 1 to p1
+mend

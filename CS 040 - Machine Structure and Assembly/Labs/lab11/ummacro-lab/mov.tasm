@@ -1,0 +1,4 @@
+macro mov
+loadval rt,0 # set the temporary register to 0 
+add p1,p2,rt # add p2 to the temporary register and set the sum to p1
+mend

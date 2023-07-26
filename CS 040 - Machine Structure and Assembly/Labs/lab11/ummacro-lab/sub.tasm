@@ -1,0 +1,6 @@
+include neg.tasm
+
+macro sub
+neg p3,p3     # negates p3 and writes the result back to the passed register 'p3'
+add p1,p2,p3  # adds p2 and (the negation of) p3 and puts the sum to p1
+mend
