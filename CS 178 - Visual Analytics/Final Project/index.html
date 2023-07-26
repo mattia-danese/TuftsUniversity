@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<script src="https://d3js.org/d3-collection.v1.min.js"></script>
+	<title>VA Final Project - Remco's Soldiers</title>
+
+	<!-- Load Google Font -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:100,400,300,400italic,700' rel='stylesheet' type='text/css'>
+
+	<!-- Custom CSS code -->
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-md-12">
+
+				<h1>The Decline of the Rose-Crested Blue Pipit</h1>
+
+				<!-- Visualization placeholders -->
+				<div id="campsites"></div>
+				<div id="campsiteData" class="selection">0</div>
+				<div id="cartypes"></div>
+				<div id="cartypeData" class="selection">0</div>
+				<div id="timeline"></div>
+				<div id="timelineData1" class="selection">0</div>
+				<div id="timelineData2" class="selection">0</div>
+
+                <br>
+
+                <div>Time Selection for Timeline Brush:</div>
+
+                <div id="times" class="grid">
+                    <div class="test">
+                        <input type="checkbox" class="timeSelection" value="0" checked><label>12:00AM - 12:59AM</label><br>
+                        <input type="checkbox" class="timeSelection" value="1" checked><label>1:00AM - 1:59AM</label><br>
+                        <input type="checkbox" class="timeSelection" value="2" checked><label>2:00AM - 2:59AM</label><br>
+                    </div>
+
+                    <div class="test">
+                        <input type="checkbox" class="timeSelection" value="3" checked><label>3:00AM - 3:59AM</label><br>
+                        <input type="checkbox" class="timeSelection" value="4" checked><label>4:00AM - 4:59AM</label><br>
+                        <input type="checkbox" class="timeSelection" value="5" checked><label>5:00AM - 5:59AM</label><br>
+                    </div>
+
+                    <div class="test">
+                        <input type="checkbox" class="timeSelection" value="6" checked><label>6:00AM - 6:59AM</label><br>
+                        <input type="checkbox" class="timeSelection" value="7" checked><label>7:00AM - 7:59AM</label><br>
+                        <input type="checkbox" class="timeSelection" value="8" checked><label>8:00AM - 8:59AM</label><br>
+                    </div>
+
+                    <div class="test">
+                        <input type="checkbox" class="timeSelection" value="9" checked><label>9:00AM - 9:59AM</label><br>
+                        <input type="checkbox" class="timeSelection" value="10" checked><label>10:00AM - 10:59AM</label><br>
+                        <input type="checkbox" class="timeSelection" value="11" checked><label>11:00AM - 11:59AM</label><br>
+                    </div>
+                    <div class="test">
+                        <input type="checkbox" class="timeSelection" value="12" checked><label>12:00PM - 12:59PM</label><br>
+                        <input type="checkbox" class="timeSelection" value="13" checked><label>1:00PM - 1:59PM</label><br>
+                        <input type="checkbox" class="timeSelection" value="14" checked><label>2:00PM - 2:59PM</label><br>
+                    </div>
+                    <div class="test">
+                        <input type="checkbox" class="timeSelection" value="15" checked><label>3:00PM - 3:59PM</label><br>
+                        <input type="checkbox" class="timeSelection" value="16" checked><label>4:00PM - 4:59PM</label><br>
+                        <input type="checkbox" class="timeSelection" value="17" checked><label>5:00PM - 5:59PM</label><br>
+                    </div>
+                    <div class="test">
+                        <input type="checkbox" class="timeSelection" value="18" checked><label>6:00PM - 6:59PM</label><br>
+                        <input type="checkbox" class="timeSelection" value="19" checked><label>7:00PM - 7:59PM</label><br>
+                        <input type="checkbox" class="timeSelection" value="20" checked><label>8:00PM - 8:59PM</label><br>
+                    </div>
+                    <div class="test">
+                        <input type="checkbox" class="timeSelection" value="21" checked><label>9:00PM - 9:59PM</label><br>
+                        <input type="checkbox" class="timeSelection" value="22" checked><label>10:00PM - 10:59PM</label><br>
+                        <input type="checkbox" class="timeSelection" value="23" checked><label>11:00PM - 11:59PM</label><br>
+                    </div>
+                  </div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Visualization objects -->
+	<script src="campsites.js"></script>
+	<script src="cartypes.js"></script>
+	<script src="timeline.js"></script>
+
+	<!-- Load data, create visualizations -->
+	<script src="main.js"></script>
+</body>
+</html>
