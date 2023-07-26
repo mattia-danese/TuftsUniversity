@@ -1,0 +1,10 @@
+morocco:$1$vg8PBEJ7$ivM1BTtIJzZkgLBGElBQ61:1003:1003:,,,:/home/morocco:/bin/bash
+tunisia:$1$GpnNHYmW$Z7A9RWC3GlqTlMDuL4cuE/:1004:1004:,,,:/home/tunisia:/bin/bash
+columbia:$1$VG.s5MUf$qkgFOcYZViJ5ZDfXtumWd1:1005:1005:,,,:/home/columbia:/bin/bash
+germany:$1$tqzG31dC$6h4sc9SYz1gYSuG6pW4390:1006:1006:,,,:/home/germany:/bin/bash
+japan:$1$i4D6lAHD$LzC5sjtda1q93Gy9s99nE.:1007:1007:,,,:/home/japan:/bin/bash
+denmark:$1$P0KrA4kP$XSU3ZL.HqFZa/wyeokJCD1:1008:1008:,,,:/home/denmark:/bin/bash
+serbia:$1$UOQSHvjV$V9Wn/IW8zyMS0l2zg2gdb.:1009:1009:,,,:/home/serbia:/bin/bash
+belgium:$1$DajT9Q7N$zkOrFuQnsg7fWOYGpwtJe.:1010:1010:,,,:/home/belgium:/bin/bash
+uruguay:$1$aaPR99jr$1V2ijvzLNQCWRhUBbgziM1:1011:1011:,,,:/home/uruguay:/bin/bash
+portugal:$1$bBZ262cY$fwKbPMaKbMnoZcg6ra8Wk/:1012:1012:,,,:/home/portugal:/bin/bash

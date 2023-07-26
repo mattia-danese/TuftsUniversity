@@ -1,0 +1,34 @@
+1. The detection ratio returned by VirusTotal is 28/64
+2.  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+   
+    The above permissions look peculiar because it seems as if the app has access to a lot of the user's personal information. The app can see what wifi the user is connected to, can get the user's location, can see all of the user's contacts, and can send messages from the user.
+
+3. Peculiar activities that seem to be taking control of the screen from the user (keyboarderHidden):
+   <activity android:theme="@android:style/Theme.Translucent" android:name="com.startapp.sdk.adsbase.consent.ConsentActivity" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" />
+    <activity android:theme="@android:style/Theme.Translucent" android:name="com.startapp.sdk.adsbase.activities.OverlayActivity" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" />
+    <activity android:theme="@android:style/Theme" android:name="com.startapp.sdk.adsbase.activities.FullScreenActivity" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" />
+
+
+4. Suspicious files:
+   newlogo.png
+   newlogo2.png
+   tk.jpg
+   ic_launcher_foreground.png
+   ic_launcher_round.png
+   ic_launcher.png
+
+5. I can the following command "grep -r 'http' ./" from the smali directory and ran each link in the grep output in VirusTotal. The following links are those that didn't not get a perfect "safe" score:  
+  https://d1byvlfiet2h9q.cloudfront.net/InApp/resources/adInformationDialog3.html (1/82)
+  
+6. This app poses as a fake tiktok.
+   I got to this conclusion by looking at all the png files in the "res" directory, some of which were of the tiktok logo and others of shapes which I presume would be made available for the user to use.
+   I then decompiled the file into Java code and examined the "Special.class" file in which there are strings which hint to a tiktok being recored by the user.
+

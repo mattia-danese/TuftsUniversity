@@ -1,0 +1,24 @@
+1. ssh       , port 22
+   web server, port 80
+   web server, port 443
+   irc       , port 6666
+
+2. YES
+
+2a. I ran 'nmap 34.123.55.187' and got back that ports 80 and 443 had the services http and https, respectively. Also, I then put 'http://34.123.55.187' and 'https://34.123.55.187' in my browser to confirm nmap. The web server software is nginx, running version number 1.10.3.
+
+3. NO
+
+3a. ---
+
+4. The target is running Linux OS and is most likely running the Debian distribution.
+
+5. The peculiar service is running on port 6666. The service provides a WebM file (video) of a very nice song.
+
+6. I ran the following command: hydra -l root -P /usr/share/wordlists/metasploit/unix_passwords.txt ssh://34.123.55.187
+   This command tries to log in to ssh at 34.123.55.187 with username root and a common password found in the text file.
+7. The target is an Industrial Control System. The open ports are: 10001
+
+8. NETGEAR R8000: 1,430
+   NETGEAR R7000: 1,953
+   NETGEAR R6400: 130

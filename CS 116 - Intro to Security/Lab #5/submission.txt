@@ -1,0 +1,17 @@
+morocco  : snacks
+japan    : 29LMGz3V
+denmark  : l'acad
+portugal : TRACE
+
+---------------------
+argentina : dallas
+mexico    : cheese
+sweden    : 5394
+
+---------------------
+costarica : 526047
+iceland   : Starf8sh
+nigeria   : meteor44
+
+
+My cracking methodology was to first split up all the passwords into three files based on the type of encryption. Then, I used John the Ripper on all three files and used the Kali-provided rockyou.txt file and also Daniel Miessler's 10 million password file (https://github.com/danielmiessler/SecLists/blob/master/Passwords/xato-net-10-million-passwords.txt) as the word lists. 
