@@ -1,0 +1,94 @@
+/**********************************************************
+* Homework 4: Binary Search Trees
+* Comp 15
+* README
+* Mattia Danese
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            make hw4
+            make testing
+     - run executable with
+            ./hw4
+            ./testing 
+
+Program Purpose:
+
+This homework handles how to create, modify, access, print, and destroy, a 
+binary search tree (BST). Learn how to design and modularize code and work with 
+documented libraries, trees, and recursion.
+
+A user can run "./hw4" and the program will make a BST, print it, modify it by
+either removing or inserting numbers, copy it to another BST object, and run
+similar commands on the the copied BST.
+A user can also run "./testing" in order to run automated tests on the 
+BinarySearchTree class and see the desired and actual output in the
+console.
+
+
+Acknowledgements:
+
+I read about Homework 4 on: 
+https://www.cs.tufts.edu/comp/15/hw/hw4/hw4.pdf
+to understand the specifications of this assignment. Additionally, I consulted 
+with classmates Eric Zaks and Cyrus Illick as it was initially a bit difficult
+to visiual the methods I had to implement. I also looked over concepts and 
+pseudocode from previous lectures as examples and to guide me when I was stuck.
+Moreover, I received help from a few Comp15 TAs as I had two bugs in my remove 
+method (first, I wasn't setting the parent child pointer to nullptr which 
+resulted in a memory leak, and, second, I set the parent child pointer to
+nullptr twice, in the middle of recursion, which resulted in a lot of memory 
+leaks since a node was lost each recursion. 
+
+Files:
+
+hw4.cpp:
+    Main file should be short and handle simple driver
+    functions such as reading in files.
+
+testingMain.cpp:
+    STUDENT TO-DO: Main file that automatically calls 
+    test functions which test the methods of the BinarySearchTree class
+
+BinarySearchTree.cpp:
+    STUDENT TO-DO: Implementation of BinarySearchTree class. Main
+    functionality of running ./hw4
+
+BinarySearchTree.h:   
+    Interface of Board class.
+
+Makefile:
+    Compiles hw4.cpp, BinarySearchTree.cpp, BinarySearchTree.h into the ./hw4 
+    executable and testingMain.cpp, BinarySearchTree.cpp, and BinarySearchTree.h
+    into the ./testing executable
+
+
+Data Structures:
+
+In the BinarySearchTree class, I implemented a BST. I did so by creating a new 
+Node struct whenever a number was added into the Tree and either assigning 
+private attribute 'root' to it (if BST was empty) or traversing through the 
+current BST, identifying the correct parent node, and then assigning one of the 
+parent child nodes to the new Node. I didn't implement any other
+data structure as no other data structure was a necessity for the functionality
+of a BST.
+
+Testing:
+Throughout this whole assignment, as soon as I finished implementing a method, I
+would immediately run ./hw4 and compare my ouutput to that of the reference
+implementation. To ensure that everything did in fact match up, I piped my 
+output to myOutput.txt, the output of the reference implementation to 
+theOutput.txt, and then ran 'diff myOutput.txt theOutput.txt'. Doind this 
+actually uncovered one line that didn't match up, because my remove function
+didn't take into account if the node that is being swapped and then removed
+has a count attribute greater than 1. 
+I also created a testingMain.cpp which tests every public function of the 
+BinarySearchTree class. In testingMain.cpp, I tested each function under 
+normal/ideal conditions and also under edge cases (when the BST is 
+nullptr). In each test function, I printed out the expected ouput, ran the 
+method I was testing on the BST, and then printed either the output of the 
+BinarySearchTree class method or the actual BST to the console.
+Testing for edge cases and printing the BST to the console uncovered yet another
+bug that my remove function had, but this time it was when it tried to remove 
+the root node as it would delete it and a garbage value would replace it.

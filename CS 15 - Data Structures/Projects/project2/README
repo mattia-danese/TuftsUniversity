@@ -1,0 +1,152 @@
+/**********************************************************
+* Project 2: Gerp
+* Comp 15 Fall 2019
+* README
+* Author: Mattia Danese
+*
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            make gerp
+     - run executable with
+            ./gerp [DirectoryToIndex] [OutputFile]
+
+Program Purpose:
+
+This project deals with traversing a file system and storing all the words in
+the file system to later be searched through. When searching for words, the
+full path of the file that the word is in, the line number, and the actual line
+will all be printed (for each instance of the searched word excluding 
+duplicates on the same line) to the output file. Learn how to design and 
+modularize code and work with documented libraries, trees, and recursion.
+
+A user can run "./gerp [DirectoryToIndex] [OutputFile]" and the program will
+create a FSTree object based on the passed directory. Then the program will 
+create a hashTable object by passing the FSTree object to the hashTable
+constructor and traversing through all files in the FSTree object, storing
+all the words, line numbers, and file paths of the files. Afterwards, the
+user will be able to input queries in the terminal and the program will
+search for the queries in the hashTable object and output to the output 
+file. 
+
+Acknowledgements:
+
+I read about Project 2 on: 
+https://www.cs.tufts.edu/comp/15/hw/proj2/Proj2_Spec.pdf
+to understand the specifications of this assignment. I used previous
+assignments as reference for my traversing function in
+FSTreeTraversal.cpp. Additionally, I asked a classmate for help as my Makefile
+wasn't initially compiling. At first I was confused on how to accomodate for
+the insensitive search, but, after talking about it with a classmate and a TA in
+office hours, I realized what to do. While testing my implementation, I
+realized it took a very long time to just traverse the smallGutenburg file. A
+TA helped discover that my problem was my add function (the if statement was 
+initially in a for loop which fully traversed the idxFiles and lineNums
+vectors). Moreover, I used sample directories provided by the
+Comp 15 professors to test my functions.
+
+Files:
+
+main.cpp:
+    Main file should be short and handle simple driver
+    functions such as traversing a file system, storing
+    the contents of the file system, and querying the
+    file system.
+
+hashTable.cpp:
+    Implementation of hashTable class. Main functionality of running ./gerp
+
+hashTable.h:
+    Interface of hashTable class
+
+stringProcessing.cpp:
+    Takes in a string, strips it of any nonalphanumeric characters, and returns
+    the stripped string 
+
+stringProcessing.h:
+    Interface of stringProcessing.cpp
+
+FSTree.h:
+    Implementation of FSTree class
+
+FSTree.o: 
+    Compiled implementation of FSTree class
+
+DirNode.h:
+    Implementation of nodes in a FSTree object
+
+DirNode.o:
+    Compiled implementation of nodes in a FSTree object
+
+design.txt:
+    Written plan of next steps for project 
+
+
+Data Structures:
+
+The data structures I used are an array and vectors to implement a
+hash table. I'm chose to use an array because it would make expanding the 
+container of buckets very easy; I can keep track of the number of inertions 
+and divide it by the total amount of bukcets (size of the array). If the
+quotient (load factor) is greater than 0.75, then I can easily and 
+efficiently call an expand method, which would make a new array with "double"
+the size, transfer the data over, delete the old array, and return the new 
+one. I'm choosing to make each bucket a vector because adding to them would
+take constant time and accessing each element in each vector can be done
+through indexing, which I like. Also, in case of collisions, chaining can
+be implemented with vectors as new elements can just be added to the back 
+of the vector. However, I do realize that when the vector buckets have to 
+expand, the time complexity would be O(n). Each vector will contain entry 
+structs which will have a key (the word), and three parallel vectors of 
+ints (one containing the indeces that map to the contents of another vector
+which has all the file paths stored, one containing the indeces that map to
+the contents of another vector which has all the lines stored, and a third
+vector partaining to the line of the file that the word is on). 
+I'm choosing to use a struct as it's an efficient way to store a word and 
+all it's occurences in the file system in one place. As previously stated,
+I will also have a vector of strings which will contain all the file paths 
+in the file system and another vector with all the lines of the files in the
+file system (so the same paths and lines won't be stored multiple times).
+
+Testing:
+
+For "FSTreeTraversal.cpp", I tested the 'traverseFS' method by running the
+treeTraversal executable and passing in
+'/comp/15/files/proj2-test-dirs/tinyData/'. I then ran 'ls' on that directory
+and all the subdirectories in it, manually checking that each file and
+directory was printed and that it was printed with the correct path.
+Note that this file was not provided because its main functionality was
+copied to the 'traverseFS' method of the hashTable class.
+
+For "stringProcessing.cpp", I tested each function seperately by outputing the
+correct output and my output using cout statements. Afterwards, I ran the
+'stringProcessing' executable, inputing strings to the console, manually
+stripped the string of any nonalphanumeric characters, and then compared my
+stripped string (the right output) with the output of my program.
+
+After finishing the implementation of the hashTable class, I ran a lot of tests
+on it and compared my output to the output of the reference implementation.
+The first tests I ran just dealth with how long my program takes to traverse
+a file system. I first tested with smallGutenburg and it took a really long
+time,which prompted some debugging with a TA to figure that it was my 'add' 
+method that took a long time. After fixing that, I ran 
+'echo "@q" | /usr/bin/time −v ./gerp' in the terminal to ensure that my program
+operated within the time and memory constraints, which it did. Next, I focued on
+edge cases:
+    - query is multiple words (all with @i)
+    - query is multiple words (only some with @i)
+    - query is an empty string or a space (" ")
+    - query has nonalphanumeric characters ("don't")
+    - query is between nonalphanumeric characters ("!flowers!")
+    - too many or too few arguments provided with "./gerp"
+For the most part my output matched the reference output line for line (I 
+checked by running "diff myOut.txt theOut.txt" where myOut.txt is my output
+and theOut.txt is the reference implementation's output). When my output didn't 
+match the reference output line for line, I checked to see if both output files
+had the same number of lines (and thus the same output but it in different 
+orders) by running "wc -l myOut.txt theOut.txt". Upon confirmation that the two
+output files had the same number of lines, I opened both outfiles in my text
+editor and COMMAND-F'd some of the lines in the 'diff' output just to make sure
+that both output files did actually have the same output just in a different 
+order.

@@ -1,0 +1,59 @@
+/**********************************************************
+* Homework 2: Linked Lists and Large Numbers
+* Comp 15 Fall 2019
+* README
+* Author: Mattia Danese
+*
+*********************************************************/
+
+Compile/run: Compile using "make"
+Run executable with "./tests" or "./money"
+
+Program Purpose: This homework assignment covers represented 
+Large Numbers with Linked Lists. 
+
+A user can run "./tests" in order to run automated tests on the Large Number
+class and see the desired and actual output in the console. Additionally, the
+user can run "./money" and either include input and output file arguements,
+where the program will execute methods based on what is in the input file 
+and will write to the output file. Or, the user can run "./money", without any
+arguements, and type commands in the console and the program will output in 
+real-time to the console.
+
+Acknowledgements: I read about Homework 2 on: 
+https://www.cs.tufts.edu/comp/15/hw/hw2_linkedlist/linkedlist_hw.pdf
+to undertsand the specifications of this assignment. I used the test functions 
+and the concepts from the methods in Homework 1 and code written by my 
+professors in class to help with this assignment. I also read about file 
+interaction in C++ on:
+https://www.cs.tufts.edu/comp/15/handouts/ioHandout/fileInteraction.pdf
+Additionally, I consulted with Erics Zaks and Cyrus Illick regarding Part 2 and 
+got help from Comp15 TA Kevin.
+
+Files:
+
+main.cpp: Main driver for the linked list of digits.
+    Runs respective methods in LargeNumber class based on input from console
+    or passed input file.
+
+testingMain.cpp: Test driver for linked list of digits.
+    Tests each method of LargeNumber with seperate, individual functions.
+
+LinkedList.cpp: Implementation of a double linked LinkedList class. Includes 
+    both a default constructor and a parameterized constructor, assignment
+    operator, insert functions (front, back, specified index), element at
+    specified index function, size accessor, print function, remove functions 
+    (front, back, specified index), add function, and concatenate function.
+
+LinkedList.h: Interface of LinkedList class.
+
+Data Structures
+---------------
+
+The main data structure of this homework is a double linked list, with a 
+front and back pointer. Inserting at the front of a linked list is O(1). 
+Inserting at the back is O(1). Access is O(n), because worst case the element 
+that is being looked for is the last element in the list.  A linked list is 
+useful because it can be used dynamically and it is easy to insert and delete.
+
+

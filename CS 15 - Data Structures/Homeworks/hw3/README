@@ -1,0 +1,122 @@
+/**********************************************************
+* HW3: Metro Simulator
+* Comp 15
+* README
+*
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            make MetroSim
+            make testing
+     - run executable with
+            ./MetroSim stationsFile passFile [commands]
+            ./testing
+
+
+Program Purpose:
+
+This homework assignment handles a running train to accomodate
+passengers arriving/departing a metro. Learn how to design and
+modularize code and work with documented libraries.
+
+A user can run "./testing" in order to run automated tests on the MetroSim
+class and see the desired and actual output in the console. Additionally, the
+user can run "./MetroSim", including a textfile with the stations, a desired 
+output file, and an optional command textfile. If a command textfile is provided,
+the program will open and read the file, executing the respective methods in the
+MetroSim class. If a command textfile is not provided, the user can manually 
+enter commands in the terminal and the program will execute the corresponding
+MetroSim method.
+
+Acknowledgements:
+
+I read about Homework 3 on: https://www.cs.tufts.edu/comp/15/hw/hw3/hw3.pdf
+to undertsand the specifications of this assignment. When I was in the 
+implementation phase, I read about vectors on: 
+https://www.cs.tufts.edu/comp/15/handouts/vector_STL_intro.shtml
+and used the vector methods there in my code. For further reference and answers
+to vector-specfic questions I used: 
+http://www.cplusplus.com/reference/vector/vector/
+I also used my Homework 2 and the code provided at:
+https://www.cs.tufts.edu/comp/15/handouts/ioHandout/fileInteraction.pdf
+to help with handling multiple parameters in the main() function.
+Additionally, I consulted with Comp15 TAs regarding an error I got when trying 
+to call .open() and .close() off of an ostream parameter in my changeOutputFile 
+function (which I then changed to an ofstream object), and a printing bug 
+which was solved my calling print() at the beginning of the while loop in 
+the run_with_source() function in main.cpp rather than at the end.
+
+
+Files: 
+
+main.cpp:
+     STUDENT TO-DO: Main file should be short and handle simple driver
+     functions such as reading in files.
+
+testingMain.cpp:
+     STUDENT TO-DO: Main file that automatically calls 
+     test functions which test the methods of the MetroSim class
+
+MetroSim.cpp:
+     STUDENT TO-DO: Implementation of MetroSim class.  Main
+     functionality of running the Metro Simulation, should be able to
+     move trains and deal with passengers going on/off the train.
+
+MetroSim.h:
+        STUDENT TO-DO: Interface of MetroSim class.
+
+stations.txt:
+        an example file containing a list of stations.
+
+test_commands.txt:
+        sample list of commands that you could give to the simulator
+
+the_metroSim:
+        reference implementation for students to see how 
+
+
+Note:  the program should handle all cases.
+
+Data Structures:
+
+In the MetroSim class, I chose to make several public methods that encapsulate
+all the necesarry functionality of Homework 3. These functions allow for 
+stations to be added to the map, the train to move, adding passengers to 
+stations, and adding/deleting passengers from the train.
+I also chose to make private helper print methods (as they are only needed by 
+the public print method), a Passeneger struct (includes 3 ints: station they 
+are waiting at, station they want to go to, and their ID number), a Station 
+struct(includes a string for its name, an int for the number of Passenegers 
+currently a the station, and a vector of type Passeneger to store all the 
+Passeneger structs currently at the station). I chose to make these structs
+because every Passeneger and Station has unique information that is needed
+either to identify it (Passeneger ID or Station name) or by a MetroSim
+function ('to' attribute of Passeneger so when the train moves and checkLeaving
+is called, the program can tell if the current station is where the Passeneger 
+needs to get off) and the easiest and most organzied way to keep track of all 
+this data is through structs. Lastly, I chose to implement two private vectors
+in the MetroSim class: one of type Stations (which represents all the stations
+of the map) and one of type Passeneger (which keeps track of any passenegers
+that are currently on the train). I chose to implement vectors because they call
+expand automaticaly, saving me the trouble of making expand/shrink functions and
+calling them, and have a built in push_back() function that adds to the back of
+the vector (which is perfect for this homework because the order of passenegers
+is preserved as the lines on the train or at the stations are queues, so new 
+passenegers getting added to the back of the line).
+
+Testing:
+
+In Homework 3, I made a seperate main function in testingMain.cpp for the sole
+purpose of testing my implementation of the MetroSim class. In testingMain.cpp, 
+I made methods that tested the core functions of the MetroSim class (addStation,
+moveTrain, and addPassengerToStation), printing the desired and actual output to
+the console. When I was finshed with the implementation, though, I tested more
+using the interactive mode of the program. Through this, I found two major bugs:
+I got an error while trying to change the output file (as I was called .close()
+ad .open() of of an ostream parameter) and my cout output didn't match the cout
+output of ./the_metroSim even though the two output files were the same. I also
+tested for edge cases through the interactive mode, by passing a station index 
+that didn't exist, changing the output file to a file that didn't exist, 
+mispelling commands, and not including 'm f' in the command file.
+

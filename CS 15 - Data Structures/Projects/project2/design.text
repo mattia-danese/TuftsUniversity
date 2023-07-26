@@ -1,0 +1,96 @@
+/**********************************************************
+* Project 2: Gerp
+* Comp 15 Fall 2019
+* Project Design
+* Author: Mattia Danese
+*********************************************************/
+
+/* Questions */
+
+1. What data structure(s) will you be using? Why these data structures?
+2. What classes will you implement (presumably including one for each data 
+   structure above)?  What public functions does each class support?
+3. How do your classes interact, i. e., does one class contain an instance of 
+   another, a pointer to an instance of another, what functions in the other 
+   class will it call?
+4. How will you implement insert, search?
+5. Describe the space needs of your solution and the runtime of important 
+   operations (insert, search).
+
+
+/* Answers */
+
+1. The data structures I will be using are an array and vectors to implement a
+   hash table. I'm choosing to use an array because it would make expanding the 
+   container of buckets very easy. I can keep track of the number of inertions 
+   and divide it by the total amount of bukcets (size of the array). If the
+   quotient (load factor) is greater than 0.75, then I can easily and 
+   efficiently call an expand method, which would make a new array with double
+   the size, transfer the data over, delete the old array, and return the new 
+   one. I'm choosing to make each bucket a vector because adding to them would
+   take constant time and accessing each element in each vector can be done
+   through indexing, which I like. Also, in case of collisions, chaining can
+   be implemented with vectors as new elements can just be added to the back 
+   of the vector. However, I do realize that when the vector buckets have to 
+   expand, the time complexity would be O(n). Each vector will contain entry 
+   structs which will have a key (the word), and two parallel vectors of 
+   interacts (1 containing the indeces that map to the contents of a vector
+   which has all the file paths stored, and the other partaining to the line
+   of the file that the word is on). I'm choosing to use a struct as it's an 
+   efficient way to store a word and all it's occurences in the file system.
+   As previously stated, I will also have a vector of strings which will
+   contain all the file paths in the file system so the same paths won't be
+   stored multiple times.
+
+2. I will make a hash table class, which will create a hash table of all the
+    words in a given file system tree. The public function it will have is
+    'search' which will take in a string, hash it, go to the index (that was
+    returned by hashing the string) of the array, loop through the vector
+    at that index until the struct with a key that matches the passed string
+    is found, loop through the two parallel vectors of the struct at the
+    same time, and print out the paths, line numbers, and lines that the 
+    word occurs in. A private function the class will have is insert
+    which will populate the bucket vectors of the hash table with structs
+    for each distinct word found in the file sysetem and populate a vector 
+    with all the file paths in the file system (the constrcutor will call
+    this method). This class will also define a private struct, which will 
+    be the contents of the bucket vectors, containing a key (word), a vector
+    of ints mapping to the file paths vector, and a vector of ints representing
+    the line that the word is on.
+
+3.  The hash table class interacts with the FSTree class by taking in a FSTree
+    object in its constrcutor, traversing the FSTree, and reading each
+    file in the tree. 
+
+4.  I will implement 'insert' by calling the traverse function that I wrote for
+    part 1 of this project and passing it a FSTree object. I will then make
+    an ifstream object and pass it the path of each file in the file system
+    tree. Next, I will read through the whole file, making a new struct for
+    each word that doesn't have one already. I will check if a struct has
+    been made by hashing the word and seeing if that index of the array
+    is empty (struct will have a bool attribute). If a struct already exists,
+    then I will just append the path of the file and the line that the word is 
+    on to the vector of the struct. I will implement 'search' by hasing the 
+    passed string, going to that index of the array, looping through the
+    contents of the vector at that index, and seeing if the vector has a struct
+    with a key equal to the passed string. If so, I will print out all the
+    contents of the struct's vector. If not, the file system doesn't contain
+    the passed string.
+
+5. The time complexity of my 'search' implementation would be the product of
+   the time it takes to traverse the initial array (O(n) where n is the total
+   amount of buckets), the time it takes to traverse the vector of structs
+   (O(x) where x is the total amount of structs in the vector), and the time it
+   takes to traverse the struct's vectors (O(y) where y is the size of both of
+   the struct's vectors). The time complexity of my 'insert' function would be
+   the product of the time it takes to traverse the tree (O(n) where n is the
+   number of subdirectories), the time it takes to traverse all the files in
+   each subdirectory (O(x) where x is the number of files in the directory),
+   and the time it takes to read in each word of each file (O(y) where y is
+   the number of words in the file). In terms of just the physical insertion
+   into the hash table, the time complexity would be O(1), since the struct
+   would be inserted in at a specific index. If there's a collision, then the
+   time complexity would be O(n) where n is the total amount of structs in the
+   vector. The space complexity of my program is the product of O(n) and O(x)
+   where n is the total amount of distinct words throughout the whole file 
+   system and x is the total amount of file (paths) in the file sysetem.

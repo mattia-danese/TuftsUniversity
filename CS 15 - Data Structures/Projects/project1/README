@@ -1,0 +1,177 @@
+/**********************************************************
+* Project 1: Richocet Robots!
+* Comp 15
+* README
+* Mattia Danese
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            make gorobots
+            make testing
+     - run executable with
+            ./gorobots mazeFile
+            ./testing mazeFile
+
+Program Purpose:
+
+This project handles storing a maze in a 2D array and having a robot try all
+possibilities to solve the maze through use of a tree. Learn how to design and
+modularize code and work with documented libraries, trees, and recursion.
+
+A user can run "./gorobots 'mazeFile'" and the program will read the information
+in the passed file, represent the apprioprate game board by storing cells (with
+the correct walls) in a 2D array, move the robot in the desired direction, and 
+print the current state of the maze to the console. Upon the user choosing
+either the automatic mode, the program will create a Tree object that contains
+a tree of all the possible paths (solutions or not) that the robot could take.
+Then the program traverses the tree, checking for the first path that is a
+solution. A user can also run "./testing 'mazeFile'" in order to run automated 
+tests on the Board and Tree class and see the desired and actual output in the
+console.
+
+
+Acknowledgements:
+
+I read about Porject 1 on: 
+https://www.cs.tufts.edu/comp/15/hw/proj1_Robots/index.shtml
+to understand the specifications of this assignment. I also used the main 
+functions of previous homeworks as a reference when it came to reading the 
+lines of the passed file and storing them. Additionally, I consulted with 
+classmate Eric Zaks as I had a bug in the main() function of main.cpp and he 
+helped me figure out that I wasn't initially accounting the spaces in the passed
+file. I used Homework 3 as refernce for the vector data structor and went to:
+http://www.cplusplus.com/reference/vector/vector/
+for any further questions. Additionally, I used the format/procedure of the main
+functions in previous homeworks and code found at:
+https://www.cs.tufts.edu/comp/15/handouts/ioHandout/fileInteraction.pdf
+as reference for opening files in the main() of main.cpp. Moreover, I used 
+Comp15 TA Kevin's notes that he uploaded to the Halligan server:
+/comp/15/files/extras/tree-workshop
+as refernece to how I should go about implementing my Tree class, as I was 
+initially confused on how to do so. Lastly, I consulted with Comp15 TA's as my 
+Tree destrcutor wasn't working, resulting in memory leaks (which was then 
+discovered to be the fault of my base case in destroyTree()). 
+
+Files:
+
+main.cpp:
+    STUDENT TO-DO: Main file should be short and handle simple driver
+    functions such as reading in files.
+
+testingMain.cpp:
+    STUDENT TO-DO: Main file that automatically calls 
+    test functions which test the methods of the Board and Tree class
+
+Board.cpp:
+    STUDENT TO-DO: Implementation of Board class. Main
+    functionality of running the Richocet Robots! game, should be able to
+    take in file, create the apprioprate board with all create walls, move the
+    robot based on user or computer generated moves, and print the state of the 
+    board after each move to the console (only in intractive mode)
+
+Board.h:   
+    STUDENT TO-DO: Interface of Board class.
+
+Tree.cpp:
+    STUDENT TO-DO: Implementation of Tree class. Main
+    functionality of running the automatic mode of Richocet Robots! game, should
+    be able to create an apprioprate tree(with a set max height) with nodes
+    representing all possible moves the robot can do (regardless if they are 
+    solutions to the maze), and populate a vector with only the complete paths
+    of the tree (paths stored in the leaves)
+Tree.h:
+    STUDENT TO-DO: Interface of Tree class.
+
+Data Structures:
+
+In the Board class, I chose to use a 2D array of type Cell for the 
+implementation of the board because it would be the easiest to traverse
+and best represents the user interface. I chose to use a 2D array with a 
+predefined size because it's faster during runtime than a 2D vector (since the 
+vector would have to copy itself every time it needed to expand) or a 2D linked 
+list. Though with such a small board capacity, like the one in this project, the
+difference in runtime is negligible. I chose to make a private Cell struct in 
+the Board class because it's a very efficient way to group all the walls at a 
+given point in the maze and allows for efficient printing of the board to the 
+console. I made 4 bools representing each wall at any given position of the
+board because then the only thing that needs to be done to see if there is a 
+wall at a certain position is to just put the necessary bool attribute in a 
+conditional.
+
+In the Tree class, I implemented my tree as a linked list. I also made a private
+Node struct, which contains an array of Node pointers (children of the Node). I
+chose to use an array simply as a container for the children Nodes, so that I
+would be able to loop through that array (when I want to go to the children) 
+instead of accessing each one individually. In the Node struct, I also have a
+string that represents the path to that Node and its height. Keeping record of
+the path makes it so the leaves of the tree have all complete (6 move) paths,
+which I then use to find a solution to the maze. Keeping record of the height
+allows for the program to know when to stop making children Nodes when building
+the tree. I also created a private array of strings called 'moves' which
+contains the 4 moves that the robot can do at any point in the game. I stored 
+the moves in an array for the same reason why I stored the children Nodes of 
+each Node in an array, so I can loop over the array instead of accessing each 
+move individually. This allows for cleaner code in my buildTree method.
+
+In main.cpp, I use a vector to store all possible complete paths of the robot. I
+chose to use a vector, even though using an array is faster than using a vector 
+during runtime (since vector has to copy istelf each time it needs to expand),
+because the efficiencies (no need to write expand method and paths added in 
+order) outweighed the drawback of slower runtime. Furthermore, using a vector 
+made testing a lot easier as I didn't have to change the vector's size, like I 
+would if it was an array, since there will be a different amount of complete 
+paths for different values of MAX_HEIGHT.
+
+Testing:
+
+During part 2 of the project, I immediately tested my code with one of the given
+sample text files and printed the output to the console. The only bug I 
+encountered was that my program wasn't recognziing any vertical or horizontal
+walls, it would only print out X's. After asking a friend for help, we noticed
+that in the main() function of main.cpp, I wasn't accounting for the spaces in 
+the text files, so I was only reading through half the maze. I fixed this by 
+looping 30 times and incrementing the iterative by 2 each time, essentially 
+skipping over the spaces.
+During part 3 of the project, I made a seperate main function in testingMain.cpp
+for the sole purpose of testing my implementation of the Board and Tree class. 
+In testingMain.cpp, I made methods that tested the core functions of the Board 
+and Tree class (move, checkWin, and findAllPaths), printing the desired and 
+actual output to the console. 
+In the testMove function, I call the 'move' method off of a Board, passed in one
+of the four directions, and printed the board. This will visually prove if this 
+method works since you see the robot's position before and after it moved (if 
+the robot ended up at the wrong place, it's then evident that this method 
+doesn't work). The edge cases I tested were if an empty string or a string that 
+isn't a command (isn't "w","s","a","d") is passed into the move method. 
+In the testCheckWin method, I move the robot and then call the  'checkWin' 
+method off of the Board object and print out its output. Each time I do this, I
+also print out the expected output of 'checkWin' (0 for not at target, 1 for at
+target) to see if 'checkWin' is returning the correct boolean value. I made a 
+seperate test method for the edge case of 'checkWin' (when the robot starts at 
+the target) called 'testCheckWinNoMoves'. This method takes in a Board, where 
+the starting robot position is the same as the target, and calls 'checkWin' to 
+see if the maze is in fact solved. 
+In the testFindAllPaths, I created a Tree object, a vector, and called 
+'findAllPaths' off of the Tree, passing it the vector. At first I made 
+MAX_HEIGHT = 2 and printed out the vector to see if all the complete paths were 
+included in the vector for that MAX_HEIGHT. Since MAX_HEIGHT needs to be 8,
+though, this approach is extremely inefficient because there would simply be too
+many paths to check. As a result, I made a array of strings and populated it
+with random paths that should be included in the tree. I then looped over this 
+array and for each path I looped over the vector to see if the path was in the
+vector. If the path was found in the vector, I set a boolean to true, broke out
+of the inner loop, and then outputed the boolean. This, of course, doesn't 
+guarantee that the 'findAllPaths' method actually finds all the complete paths,
+but gives a pretty good indication that it does if it contains the randomly
+generated paths in the string array.
+To test the helper methods in main.cpp, I put 'cout' statements after assigning
+variables to the ouput of 'askRobotSynbol', 'askStartingPosition', and 'askMode'
+. Additionally, I put a 'cout' statement after taking in the user input in 
+'interActiveMode' to check if the correct string is being passed into the Board
+method 'move'. Lastly, I put two 'cout' statements in 'automaticMode': one in 
+the inner loop to check if the vector is being popualated and if the vector 
+(seems) to contain all the complete paths, and one before calling 
+'printCorrectPath' to see if path found is actually correct (I would rerun the
+program, select interactive mode, do the same path as the one previously
+outputed, and see if I get to the target).

@@ -1,0 +1,114 @@
+/**********************************************************
+* Homework 5: Sorting
+* Comp 15 Fall 2019
+* README
+* Author: Mattia Danese
+*
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            make sorter
+            make testing
+     - run executable with
+            ./sorter sortAlg outputMode [fileName]
+            ./testing
+
+Program Purpose:
+
+This homework handles sorting a vector of ints using three different types of
+sorts (insertion sort, radix sort, and quick sort) in an apprioprate time. 
+Learn how to design and modularize code and work with documented libraries, 
+trees, and recursion.
+
+A user can run "./sorter sortAlg outputMode [fileName]"and the program will 
+create a vector of ints and populate it either by the user input in the conosle
+or by the optional passed input file. Then, the program will sort the vector
+with the corrcet sort and output the contents of the sorted vector either to
+the console or to an output file. 
+A user can also run "./testing" in order to run automated tests on all three of
+the sorts and see the desired and actual outputs in the console.
+
+Acknowledgements:
+
+I read about Homework 5 on: 
+https://www.cs.tufts.edu/comp/15/hw/hw5/sorting_hw.pdf
+to understand the specifications of this assignment. For my implementation of
+insertion sort, I referenced my old notes and work from the AP Computer Science
+class I took in high school, as we implemented numerous sorts in Java. For my
+implementation of the radix sort, I referenced my notes from lecture and 
+reversed engineering the sort as Professor Sheldon went through two iterations
+of it. I watched the video found at:
+https://www.youtube.com/watch?v=Hoixgm4-P4M
+to help me visualize and plan the implementation of the quick sort. 
+Additionally, I consulted with a couple of Comp 15 TAs as my quick sort
+implementation initially resulted in an infinite recursion loop. However, 
+we weren't able to fix the bug so TA Kevin Li helped me think of another
+way I could go about implementing quick sort. Moreover, I initially compared
+the contents of argv[] to specifc strings, in my main function, which caused
+a bug because the conditional would always evaluate to false. After an hour of
+debugging and having no luck, I asked classmate Eric Zaks to help me debug and
+he suggested to just set a string equal to the contents of argv[] and then pass
+the string into the conditional. Lastly, classmate Cyrus Illick shared a useful 
+method with me regarding text files with large quantites of random 
+numbers for testing purposes, and I used pervious assignments as reference for
+reading in and writing to files.
+
+Files:
+
+sorter.cpp:
+    STUDENT TO-DO: Main file should be short and handle simple driver
+    functions such as reading in files, sorting lists of numbers, and 
+    writing to files or outputing to the console.
+
+testingMain.cpp:
+    STUDENT TO-DO: Main file that automatically calls 
+    test functions which test all three sorts and their helper functions
+
+sortAlgs.cpp:
+    STUDENT TO-DO: Implementation of the three sorts. Main
+    functionality of running the sorter or testing executable. Should be able
+    to sort a vector of ints using three different methods.
+
+sortAlgs.h:   
+    STUDENT TO-DO: Interface of sort functions.
+
+num.txt:
+    Text file with 3 inegers. Used for testing purposes.
+
+bigNumber.txt:
+    Text file with 1,000 inegers. Used for testing purposes.
+
+hugeNumber.txt:
+    Text file with 100,000 inegers. Used for testing purposes.
+
+
+Data Structures:
+
+In sorter.cpp, the main driver, I initialize a vector of ints to be the
+container for the numbers to be sorted. I did this because it was one of the
+parameters of this assignment, but I believe the professors had us use vectors
+as this assignment deals with sorting a large quantity of numbers, thus vectors
+would be much more efficient than arrays or linked lists because they
+automatically expand when more indeces are needed and accessing each number
+takes constant time because vectors are indexed. No other data structures were
+used in this assignment.
+
+
+Testing:
+
+As I was implementing the sorts and their helper functions, I would immediately
+test a method after I finished coding it. For the helper functions, I called
+them in the main() function of sorter.cpp and outputed the list (if the
+purpose of the function is to modify the list) or the function's return value
+to the console. I also created testingMain.cpp to test the three sorts under
+specifc conditions. The edge cases I tested in testingMain.cpp are: the 
+"normal" case with psotiive and negative numbers, the case where the list is
+empty, and if the list contained only one number. I didn't include test
+functions for the helper functions because I previously tested them with cout
+statements, so I was confident they work, and because they technically would be
+private functions had I implemented a class, so they wouldn't be included in
+unit testing. The last form of testing I did was creating text files that had
+3 numbers (num.txt), 1000 numbers (bigNumber.txt), and 100000 (hugeNumber.txt)
+and the running the '/bin/time -p  ./sorter sortAlg outputMode [fileName]'
+command to see if my sorts satisfied the time requirement of this assignment. 
