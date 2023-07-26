@@ -1,0 +1,12 @@
+PART 1
+    - run webserver (nodejs)
+    - make html page with form that asks for csv file
+    - on form submit, file gets sent back to server
+    - server populates mongodb atlas database
+
+PART 2
+    - run webserver (nodejs)
+    - make html page with form that asks for ticker or company name
+    - on form submit, ticker or company name gets sent back to server
+    - server looks up info in mongodb atlas database
+    - server sends back info to user 
