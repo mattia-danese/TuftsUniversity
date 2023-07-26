@@ -1,3 +1,0 @@
-macro com
-nand p1,p2,p2 #inverts p2 by nanding it with itself and puts the result in p1
-mend

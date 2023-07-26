@@ -1,5 +1,0 @@
-macro or
-nand p1,p2,p2  # puts the result of a bitwise NAND on p2 and itself in p1
-nand rt,p3,p3  # puts the result of a bitwise NAND on p3 and itself in the temporary register
-nand p1,p1,rt  # puts the result of a bitwise NAND on p1 and the temporary register in p1
-mend
