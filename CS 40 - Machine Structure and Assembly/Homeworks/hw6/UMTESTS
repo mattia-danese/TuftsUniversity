@@ -1,0 +1,14 @@
+cmov.um
+sload.um
+sstore.um
+add.um
+mult.um
+div.um
+nand.um
+halt.um
+map.um
+unmap.um
+out.um
+in.um
+loadp.um
+loadv.um

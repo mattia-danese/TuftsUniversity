@@ -1,0 +1,28 @@
+Mattia Danese and Martino Buselli
+Arith (HW5)
+3/7/20
+
+Architecture:
+    40image.c is the main driver of the program. It takes files to be compressed
+    or decompressed according to the command line arguements. It then calls
+    the appropriate compression or decompression functions and outputs the 
+    compressed or decompressed file to standard output.
+
+    pack.c is the compression module. It contains a parent function where
+    all other functions partaining to this module are called. It takes in a 
+    original image in ppm format and outputs a lossly compressed version of it.
+
+    unpack.c is the decompression module. It contains a parent function where
+    all other functions partaining to this module are called. It takes in a 
+    compressed file and outputs the corresponding ppm.
+
+    bitpack.c contains functions regarding bit-wise arithmetic for bit-packing
+    used in both pack.c and unpack.c
+
+We have thank the TAs a lot for helping us with bugs, especially Ann Marie for 
+staying really on Friday.
+
+Everything to our knowledge has been implemented correctly.
+
+Hours analyzing problems: 6
+Hours solving problems: 30

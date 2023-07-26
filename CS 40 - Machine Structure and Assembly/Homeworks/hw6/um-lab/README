@@ -1,0 +1,112 @@
+  filename: README
+assignment: UM (hw6)
+written by: Mattia Danese, Martino Buselli (mbusel01)
+
+
+Acknowledgements:
+
+    We'd like to thank all TA's for their support and guidance
+    during this assignment.
+
+What has been correctly implemented and what hasn't:
+
+    Our UM implementation is fully functional. All UM assembly instructions
+    works appropiately and when passed large benchmark intruction sets,
+    our UM successfully passes them within satisfactory time limits.
+
+Significant departures from design:
+
+    The original design had two separate modules for main memory
+    and the registers. In our implementation we deicded to merge 
+    both into a single memory module, in order to simplify the 
+    architeture without hurting modularity.
+    
+    In our original design, the functionality module was the only module
+    which included the memory module, and was supposed to work as the bridge
+    between the memory and the rest of the program. However, due to the
+    fetcher module's need to access the instruction segment, we had to abandon
+    the original design and give both the fethcer and functioanlity module
+    access to memory.
+
+Architecture summary:
+
+    Modules:
+
+    - Memory Module (umMemory.c): Handles all memory structures, as 
+                                  well as access and modification of these
+
+    - Fetcher Module (fetcher.c): Handles parsing through the instruction 
+                                  segment, extracting instruction words 
+                                  and unpacking their conetnts
+    
+    - Functionality Module (functionality.c): Contains functions for all
+                                              UM instructions, as well as
+                                              a function to choose an 
+                                              instruction based on opcode.
+                                            
+        
+
+For 50 million instructions: 9,964 seconds
+
+    For this calculation, we got the number of instructions in midmark.um
+    , and recorded the time taken by our UM to pass those
+    benchmarks. We divided the amount of time by the amount of
+    insrtuctions to get an approximate measurment for our UM's time 
+    per instruction.
+
+    We multiplied this approximation by 50mil to get the approximation.
+
+UM Unit tests and descriptions:
+
+    cmov.um - tests the conditional move instruction by moving
+              a predetermined value from one register to the other
+
+    sload.um - tests the segment load instruction by mapping a segment,
+               storing predetermined values within it and then checking
+               that the function retrives the same value.
+
+    sstore.um - tests the segment load instruction by mapping a segment,
+                storing predetermined values within it and then checking
+                that the function retrives the same value.
+
+    add.um - tests the add instruction by loading predetermined values
+             into registers and calling the add intruction. Then it
+             checks whether or not the result coincides. 
+
+    mult.um - tests the multiply instruction by loading predetermined values
+              into registers and calling the multiplication. Checks
+              whether or not the product coincides with the precalculated 
+              result. 
+
+    div.um - tests the division instruction by loading predetermined values
+             into registers and calling the division with them. Checks
+             whether or not the resulting quotient coincides with the output. 
+
+    nand.um - tets the nand instruction by loading a series of vlaues into 
+              memory and then preforming nand operations on them.
+
+    halt.um - tests the halt instruction by calling the halt function and 
+              making the program stop.
+
+    halt-verbose.um - test the halt instruction by appending non-halt 
+                      instructions after the halt instructions. 
+                      If the program stops before executing those instructions,
+                      it succeeds.
+
+    map.um - tests the map_segment instruction by mapping a segment, writing 
+             predetermined values to it and then adds them with add to ensure
+             that they were written correctly to a mapped segment.
+
+    unmap.um - tests the unmapping segment instruction by mapping aa segment,
+               storing values to it and then unmapping it.
+               Another is then mapped and an addition is preformed on the
+               previously written values. Since those values were unmapped,
+               a successful addition should result with a sum of 0.
+
+    out.um - tests the output instruction by loading a series of values
+             into memory and then outputting them. A successful test should
+             print the given values to stdout.
+
+    in.um - tests the input instruction through a series of inputs and outputs.
+            A successful input instruction should output all that is inputted
+            given that its within the appropiate range.

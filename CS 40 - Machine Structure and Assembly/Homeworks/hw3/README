@@ -1,0 +1,84 @@
+Cyrus Illick (cillic01)
+Mattia Danese (mdanes01)
+
+Acknowledgments: 
+We received help from multiple TAs
+
+To the best of our knowledge everything has been implemented correctly.
+
+Architecture:
+Our blocked Uarray implementation is a UArray2 of Uarrays. We followed the 
+suggestion in the spec. Our rotation functions are implemented in ppmtrans.c and
+declared in ppmtrans.h. Our unblocked Uarray is implemented as a UArray2, which
+was created for the last homework. 
+
+Hours spent: 35
+
+Computer used for timing: 
+Model: INtel(R) Core(TM) i7-6700 CPU @ 3.40GHz
+
+
+Table for image (1140 X 641): 
+Rotation  | major  | instructions per pixel 
+------------------------------------------- 
+90        | row    | 28
+180       | row    | 33
+270       | row    | 37
+90        | col    | 32
+180       | col    | 36
+270       | col    | 30
+90        | block  | 41
+180       | block  | 45
+270       | block  | 40
+-------------------------------------------
+
+
+Table for image (10109 X 4542): 
+Rotation  | major  | instructions per pixel 
+------------------------------------------- 
+90        | row    | 27
+180       | row    | 30
+270       | row    | 27
+90        | col    | 29
+180       | col    | 33
+270       | col    | 29
+90        | block  | 39
+180       | block  | 43
+270       | block  | 38
+
+
+Block major is the slowest across all rotations for all image sizes. Even though
+it may have the best optimized locality, there are more instructions being run
+during block mapping: 3 for loops are being executed and the indices of the
+block and element have to be calculated. Cumulatively, the greater amount of
+instructions makes the overall functionality of block major slower than col
+and row major.
+
+Block major time per pixel is similar across rotations 90 and 270 because each
+block is optimized to be the maximum possible size (the size of a cache line)
+regardless of the image size. However, block major rotation 180 is slower per
+pixel because the apply function for rotation 180 has more instructions than
+those of the 90 and 270 rotations. In fact, rotation 180 is the slowest 
+across all map majors for all image sizes (except for one unexpected result)
+due to its apply function having the most instructions, relative to the
+apply functions of rotation 90 and 270.
+
+Row major speed is similar across rotation 90 and 270, for most image sizes.
+Rotation 90 and 270 take around 27 instructions per pixel. The pixels are 
+accessed in row major order and then read into the rotated image in col-major 
+order. The cost of the instructions to move one pixel to its new position has
+a larger effect on the time of the rotation than the locality. For really big 
+images, more cache blocks have to be changed but the speed remains around 27 
+because the instructions for moving each pixel does not change based on image 
+size. There is one anomaly: our rotation 270 with row major takes 37 
+instructions per pixel for a small image. This was unexpected and we don’t
+know why this occurred because it should follow the same trend as the 
+rotation 270 and 90 on the other image sizes. As was true with block-major
+mapping, rotation 180 takes longer because of the increase in instructions. 
+
+Col major speed for rotation is also similar for rotations 90 and 270 and,
+on average, takes 2 more instructions per pixel than our row major mapping.
+Pixels are stored in row major order, in memory, so it makes sense that our 
+col major is slower. But, because the instructions of the rotation have a 
+larger effect on the time of the rotation than the locality, the col major map 
+is only slightly slower the row major mapping. 

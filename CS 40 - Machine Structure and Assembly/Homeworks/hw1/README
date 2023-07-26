@@ -1,0 +1,42 @@
+*************************************
+* Filesnpix                         *
+* Comp 40                           *
+* 1/31/20                           *
+* HW 1                              *
+*                                   *
+* Nolan Feeley                      *
+* nfeele01                          *
+*                                   *
+* Mattia Danese                     *
+* mdanes01                          *
+*************************************
+
+
+Acknowledgements:
+We received help from numerous TAs during office hours mostly regarding
+memory errors and utilizing Hanson structures.
+
+Implementation:
+  Brightness
+    We used the Pnmrdr Interface to get pxi
+
+
+  readaline
+    We initially planned to implement readaline with a Hanson List. Upon not
+    getting the List_toArray method to work and getting advice from a TA to 
+    consider using another Hanson structure, we decided to use Hanson Sequences
+    instead. We looped through the provided stream and accessed each character, 
+    storing in a Hanson Sequence if it is a valid word character. The loop breaks
+    out if a newline characer is read or EOF is reached. The program then converts
+    the contents of the Hanson Sequence to a char *, assigns it to *datapp, and
+    returns the line's byte count. This implementation works completely without
+    any errors or memory leaks.
+
+
+  simlines
+
+
+
+
+
+Hours: Approximately 25 hours
