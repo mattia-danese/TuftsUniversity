@@ -1,0 +1,30 @@
+<scenefile>
+    <globaldata>
+        <diffusecoeff v="0.5"/>
+        <specularcoeff v="0.5"/>
+        <ambientcoeff v="0.5"/>
+    </globaldata>
+<lightdata>
+		<id v="0"/>
+		<color r="1" g="1" b="1"/>
+		<position x="3" y="3" z="3"/>
+</lightdata>
+<cameradata>
+        <pos x="2.000000" y="2.000000" z="2.000000"/>
+        <up x="-0.408248" y="0.816497" z="-0.408248"/>
+        <heightangle v="60"/>
+        </cameradata>
+<object type="tree" name="root">
+<transblock>
+<matrix>
+<row0 v1="2.000000" v2="0.000000" v3="0.000000" v4="0.000000" />
+<row1 v1="0.000000" v2="2.000000" v3="0.000000" v4="0.000000" />
+<row2 v1="0.000000" v2="0.000000" v3="2.000000" v4="0.000000" />
+<row3 v1="0.000000" v2="0.000000" v3="0.000000" v4="1.000000" />
+</matrix>
+<object type="primitive" name="sphere" >
+        <diffuse r="128.000000" g="106.000000" b="0.000000"/>
+</object>
+</transblock>
+</object>
+</scenefile>

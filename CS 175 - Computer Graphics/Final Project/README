@@ -1,0 +1,20 @@
+Members of group:
+    Mattia Danese
+    Sam Russo
+    Tim Seifert
+
+Name of project: 3D Etch-A-Sketch
+
+Description of project: This project allows users to create and manipulate
+objects in 3D space. They can create the four different basice shapes we've
+used throughout the semester: cube, sphere, cone, and cylinder, and users
+can drag them around the scene (ie translate), scale, and rotate them about the
+axes. Users can then output these scenes to the xml format we've used throughout
+this class.
+
+Known bugs: Scaled cubes, cylinders, and spheres don't drag correctly. Rotation
+followed by dragging is treated as undefined behavior.
+
+How to compile: make
+
+How to run: ./final
