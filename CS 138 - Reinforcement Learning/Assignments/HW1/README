@@ -1,0 +1,18 @@
+Mattia Danese
+CS138 - Homework 1
+README
+
+How to run:
+  python3 script.py
+
+How to use:
+  - set 'use_constant_step_size' to True to run bandits with the constant 
+    step-size method where alpha = 'step_size',
+    otherwise set to False to run bandits with sample average method
+  - set 'decrease_epsilon' to False to keep a constant epsilon of 0.1,
+    otherwise set to True and epsilon will decrease by 50% every 1000 time steps
+    (second experiment)
+
+Dependencies needed:
+  - numpy
+  - matplotlib

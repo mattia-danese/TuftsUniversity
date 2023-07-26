@@ -1,0 +1,13 @@
+Mattia Danese
+CS138 - Homework 3
+README
+
+How to run:
+  python3 script.py
+
+How to use:
+  - Running normally will result in 100 episodes in the stationary env and 1000 episodes in the non-stationary env 
+
+Dependencies needed:
+  - numpy
+  - matplotlib

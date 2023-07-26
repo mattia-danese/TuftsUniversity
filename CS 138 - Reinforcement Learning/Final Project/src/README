@@ -1,0 +1,23 @@
+Mattia Danese and Evan Loconto
+CS138 - Final Project
+README
+
+How to run:
+  python3 script.py
+
+How to use:
+  - If one would like to simply output the single best goalkeeper position per attacking position:
+    - set 'num_episodes' in script.py to 2,000,000 
+    - set 'num_agents' in script.py to 10
+    - run the above command
+  - If one would like to instead visualize the convergence of the bandits with regards to the average reward graph:
+    - set 'num_episodes' in script.py to 100
+    - set 'num_agents' in script.py to 100
+    - run the above command
+
+Required System:
+  - This program is designed to run on any OS or computing environment so long as Python3 and the required dependencies (see below) are installed
+
+Required Dependencies:
+  - numpy
+  - matplotlib

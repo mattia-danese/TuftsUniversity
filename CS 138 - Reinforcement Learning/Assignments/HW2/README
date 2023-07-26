@@ -1,0 +1,26 @@
+Mattia Danese
+CS138 - Homework 2
+README
+
+How to run:
+  python3 script.py
+
+How to use:
+  - Running normally will result in 1000 episodes (no retries during episodes)
+    and then the plot of average reward per episode will be generated.
+    
+  - In order to evaluate greedy policy (i.e. strictly follow policy), uncomment
+    lines 171 onwards and re-run. 
+    This will run normally (1000 episodes, no retires, and average reward plot)
+    and will also print to console the agent's steps in the optimal path it found.
+
+  - Specify the racetrack textfile to read in on line 24
+    Note: my parsing logic assumes the invariant that racetrack files must have 
+          0's as barriers, 1's as valid positions, 2's as the starting line, and
+          3's as the finish line 
+
+  - In order to enable retry-ability, set 'retry_enabled' to True on line 48 
+
+Dependencies needed:
+  - numpy
+  - matplotlib
